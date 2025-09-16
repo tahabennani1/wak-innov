@@ -80,6 +80,21 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* --- Projets --- */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .project img {
+      width: 100%;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+    .project img:hover {
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
@@ -94,7 +109,6 @@
       <ul id="menu">
         <li><a href="#about">À propos</a></li>
         <li><a href="#projects">Projets</a></li>
-        <li><a href="#skills">Compétences</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -103,25 +117,28 @@
   <main>
     <section id="about" class="fade-in">
       <h2>À propos de moi</h2>
-      <p>Je suis un ingénieur passionné par la mécanique et la simulation numérique.</p>
+      <p>Je suis un ingénieur passionné par la mécanique, la conception et la simulation numérique appliquées aux systèmes complexes.</p>
     </section>
 
     <section id="projects" class="fade-in">
-      <h2>Projets</h2>
-      <div class="project">
-        <img src="https://source.unsplash.com/400x300/?engineering" alt="Projet ingénierie">
-        <h3>Simulation numérique</h3>
-        <p>Étude et modélisation d'un système mécanique complexe.</p>
+      <h2>Projets réalisés</h2>
+      <div class="projects-grid">
+        <div class="project">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Catia-screenshot.png" alt="Conception 3D sur CATIA">
+          <h3>Conception mécanique</h3>
+          <p>Modélisation 3D de pièces mécaniques et assemblages complexes.</p>
+        </div>
+        <div class="project">
+          <img src="https://www.ansys.com/-/media/ansys/corporate/resourcelibrary/whitepaper/2019/structural-mechanics-white-paper.jpg" alt="Simulation numérique avec Ansys">
+          <h3>Simulation numérique</h3>
+          <p>Analyse par éléments finis (FEA) pour évaluer contraintes et déformations.</p>
+        </div>
+        <div class="project">
+          <img src="https://www.mdpi.com/applsci/applsci-11-04156/article_deploy/html/images/applsci-11-04156-g001.png" alt="Étude vibratoire d'une structure mécanique">
+          <h3>Analyse vibratoire</h3>
+          <p>Étude des fréquences propres et comportements dynamiques.</p>
+        </div>
       </div>
-    </section>
-
-    <section id="skills" class="fade-in">
-      <h2>Compétences</h2>
-      <ul>
-        <li>Conception mécanique (SolidWorks, CATIA)</li>
-        <li>Simulation numérique (Ansys, Abaqus)</li>
-        <li>Programmation (Python, MATLAB)</li>
-      </ul>
     </section>
 
     <section id="contact" class="fade-in">
@@ -158,12 +175,10 @@
 
     // --- Animations au scroll ---
     const faders = document.querySelectorAll('.fade-in');
-
     const appearOptions = {
       threshold: 0.2,
       rootMargin: "0px 0px -50px 0px"
     };
-
     const appearOnScroll = new IntersectionObserver(function(entries, observer) {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
@@ -171,11 +186,9 @@
         observer.unobserve(entry.target);
       });
     }, appearOptions);
-
     faders.forEach(fader => {
       appearOnScroll.observe(fader);
     });
   </script>
 </body>
 </html>
- 
