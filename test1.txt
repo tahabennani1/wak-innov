@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAK INNOV</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+        header p {
+            font-size: 1.2em;
+        }
+        section {
+            padding: 50px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        h2 {
+            color: #4facfe;
+            margin-bottom: 20px;
+        }
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+            flex: 1 1 250px;
+            text-align: center;
+        }
+        .card h3 {
+            margin-top: 0;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+        a.button {
+            display: inline-block;
+            margin-top: 15px;
+            background: #4facfe;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        a.button:hover {
+            background: #00c2fe;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- En-tête -->
+    <header>
+        <h1>Conception & Modélisation 3D</h1>
+        <p>Solutions sur mesure pour vos projets industriels et créatifs</p>
+    </header>
+
+    <!-- Présentation -->
+    <section>
+        <h2>À propos</h2>
+        <p>
+            Je suis spécialisé dans la conception et la modélisation 3D. 
+            J’accompagne mes clients dans le développement de prototypes, 
+            la création de modèles réalistes et la préparation de fichiers pour impression 3D.
+        </p>
+    </section>
+
+    <!-- Services -->
+    <section>
+        <h2>Mes services</h2>
+        <div class="services">
+            <div class="card">
+                <h3>Conception 3D</h3>
+                <p>Modélisation précise de pièces mécaniques et objets complexes.</p>
+            </div>
+            <div class="card">
+                <h3>Prototypage</h3>
+                <p>Préparation et optimisation de fichiers pour impression 3D.</p>
+            </div>
+            <div class="card">
+                <h3>Visualisation</h3>
+                <p>Rendus réalistes pour vos projets et présentations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section>
+        <h2>Contact</h2>
+        <p>Intéressé par mes services ? Discutons de votre projet !</p>
+        <a class="button" href="mailto:tonemail@example.com">📧 Me contacter</a>
+    </section>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>© 2025 - Mon Entreprise 3D | Tous droits réservés</p>
+    </footer>
+
+</body>
+</html>
