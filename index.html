@@ -82,13 +82,12 @@
     }
 
     /* --- Projets --- */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
+    .project {
+      margin-bottom: 40px;
+      text-align: center;
     }
     .project img {
-      width: 100%;
+      max-width: 100%;
       border-radius: 8px;
       transition: transform 0.3s ease;
     }
@@ -122,22 +121,23 @@
 
     <section id="projects" class="fade-in">
       <h2>Projets réalisés</h2>
-      <div class="projects-grid">
-        <div class="project">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Catia-screenshot.png" alt="Conception 3D sur CATIA">
-          <h3>Conception mécanique</h3>
-          <p>Modélisation 3D de pièces mécaniques et assemblages complexes.</p>
-        </div>
-        <div class="project">
-          <img src="https://www.ansys.com/-/media/ansys/corporate/resourcelibrary/whitepaper/2019/structural-mechanics-white-paper.jpg" alt="Simulation numérique avec Ansys">
-          <h3>Simulation numérique</h3>
-          <p>Analyse par éléments finis (FEA) pour évaluer contraintes et déformations.</p>
-        </div>
-        <div class="project">
-          <img src="https://www.mdpi.com/applsci/applsci-11-04156/article_deploy/html/images/applsci-11-04156-g001.png" alt="Étude vibratoire d'une structure mécanique">
-          <h3>Analyse vibratoire</h3>
-          <p>Étude des fréquences propres et comportements dynamiques.</p>
-        </div>
+      
+      <div class="project">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Catia-screenshot.png" alt="Conception 3D sur CATIA">
+        <h3>Conception mécanique</h3>
+        <p>Modélisation 3D de pièces et assemblages mécaniques complexes.</p>
+      </div>
+
+      <div class="project">
+        <img src="https://www.ansys.com/-/media/ansys/corporate/resourcelibrary/whitepaper/2019/structural-mechanics-white-paper.jpg" alt="Simulation numérique avec Ansys">
+        <h3>Simulation numérique</h3>
+        <p>Analyse par éléments finis (FEA) pour étudier contraintes et déformations.</p>
+      </div>
+
+      <div class="project">
+        <img src="https://www.mdpi.com/applsci/applsci-11-04156/article_deploy/html/images/applsci-11-04156-g001.png" alt="Étude vibratoire">
+        <h3>Analyse vibratoire</h3>
+        <p>Étude des fréquences propres et comportements dynamiques de structures.</p>
       </div>
     </section>
 
