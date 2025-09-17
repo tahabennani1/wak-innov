@@ -297,42 +297,6 @@
             font-size: 0.8rem;
         }
         
-        /* Software Section */
-        .software {
-            padding: 80px 0;
-            background-color: white;
-        }
-        
-        .software-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .software-item {
-            text-align: center;
-            padding: 20px;
-            background: var(--light);
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-        
-        .software-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .software-item img {
-            height: 80px;
-            margin-bottom: 15px;
-            object-fit: contain;
-        }
-        
-        .software-item h3 {
-            font-size: 1.1rem;
-            color: var(--dark);
-        }
-        
         /* Expertise */
         .expertise {
             padding: 80px 0;
@@ -422,6 +386,7 @@
             position: relative;
             z-index: 2;
             flex: 1;
+            padding: 0 15px;
         }
         
         .step-number {
@@ -711,7 +676,6 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#expertise">Expertise</a></li>
                 <li><a href="#projects">Projets</a></li>
-                <li><a href="#software">Logiciels</a></li>
                 <li><a href="#process">Process</a></li>
                 <li><a href="#gallery">Réalisations</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -752,6 +716,11 @@
                     <h3>Gestion de Projet</h3>
                     <p>Accompagnement complet de votre projet, de l'idée initiale à la réalisation finale.</p>
                 </div>
+                <div class="service-card">
+                    <i class="fas fa-search"></i>
+                    <h3>Contrôle Non Destructif</h3>
+                    <p>Contrôle des échangeurs, réservoirs et fours thermiques avec différentes techniques de CND.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -765,7 +734,7 @@
             </div>
             <div class="project-grid">
                 <div class="project-card">
-                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
                         <div class="project-img-overlay">
                             <i class="fas fa-rocket"></i>
                         </div>
@@ -781,7 +750,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
+                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
                         <div class="project-img-overlay">
                             <i class="fas fa-robot"></i>
                         </div>
@@ -816,42 +785,6 @@
         </div>
     </section>
 
-    <!-- Software Section -->
-    <section id="software" class="software">
-        <div class="container">
-            <div class="section-title">
-                <h2>Logiciels Maîtrisés</h2>
-                <p>Une expertise technique sur les outils professionnels les plus avancés</p>
-            </div>
-            <div class="software-grid">
-                <div class="software-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/2/23/SolidWorks_Logo.svg/1200px-SolidWorks_Logo.svg.png" alt="SolidWorks">
-                    <h3>SolidWorks</h3>
-                </div>
-                <div class="software-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/0/06/Logo_CATIA.svg/1200px-Logo_CATIA.svg.png" alt="CATIA V5">
-                    <h3>CATIA V5</h3>
-                </div>
-                <div class="software-item">
-                    <img src="https://www.ansys.com/themes/ansys/logo-ansys-black.svg" alt="Ansys">
-                    <h3>Ansys</h3>
-                </div>
-                <div class="software-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/5e/Dassault_Systemes_ABAQUS_logo.svg/1200px-Dassault_Systemes_ABAQUS_logo.svg.png" alt="Abaqus">
-                    <h3>Abaqus</h3>
-                </div>
-                <div class="software-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Microsoft_Office_logo_%282019%E2%80%93present%29.svg/800px-Microsoft_Office_logo_%282019%E2%80%93present%29.svg.png" alt="Microsoft Office">
-                    <h3>Microsoft Office</h3>
-                </div>
-                <div class="software-item">
-                    <img src="https://logos-world.net/wp-content/uploads/2021/02/Power-BI-Symbol.png" alt="Power BI">
-                    <h3>Power BI</h3>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Expertise -->
     <section id="expertise" class="expertise">
         <div class="container">
@@ -863,17 +796,22 @@
                 <div class="expertise-item">
                     <i class="fas fa-drafting-compass"></i>
                     <h3>CAO & Dessin Industriel</h3>
-                    <p>SolidWorks, Fusion360, Dessin et plan 2D</p>
+                    <p>SolidWorks, Catia V5, Dessin industriel</p>
                 </div>
                 <div class="expertise-item">
                     <i class="fas fa-calculator"></i>
                     <h3>Simulation Numérique</h3>
-                    <p>Ansys, Abaqus, CalculiX, Calcul EF, Thermique, Vibratoire</p>
+                    <p>Ansys, Abaqus, Calcul EF, Thermique, Vibratoire</p>
                 </div>
                 <div class="expertise-item">
                     <i class="fas fa-tachometer-alt"></i>
                     <h3>Gestion de Projet</h3>
                     <p>Planification, Chiffrage, Amélioration continue</p>
+                </div>
+                <div class="expertise-item">
+                    <i class="fas fa-search"></i>
+                    <h3>Contrôle Non Destructif</h3>
+                    <p>Electromagnétisme, Ultrasons, Mesure de gonflement</p>
                 </div>
             </div>
         </div>
@@ -961,14 +899,14 @@
                         <i class="fas fa-phone"></i>
                         <div>
                             <h3>Téléphone</h3>
-                            <p>+33 7 74 80 91 75</p>
+                            <p>+33 7 66 31 87 61</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <h3>Email</h3>
-                            <p> </p>
+                            <p>Bennanitaha58@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -995,9 +933,82 @@
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" class="form-control" required
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>WAK INNOV</h3>
+                    <p>Bureau d'études mécaniques spécialisé en conception et simulation numérique pour l'industrie.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Liens rapides</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#expertise">Expertise</a></li>
+                        <li><a href="#projects">Projets</a></li>
+                        <li><a href="#process">Process</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Conception 3D</a></li>
+                        <li><a href="#">Calculs Mécaniques</a></li>
+                        <li><a href="#">Prototypage</a></li>
+                        <li><a href="#">Optimisation</a></li>
+                        <li><a href="#">Gestion de Projet</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 WAK INNOV - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.querySelector('.contact-form form');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Merci pour votre message ! Nous vous contacterons très rapidement.');
             contactForm.reset();
         });
     </script>
 </body>
-</html>   
+</html>
