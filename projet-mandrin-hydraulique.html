@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandrin Hydraulique | WAK INNOV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0056b3;
+            --secondary: #2e86de;
+            --accent: #ff6b6b;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .project-detail {
+            padding: 80px 0 40px;
+        }
+        
+        .project-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .project-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .meta-item i {
+            color: var(--primary);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .project-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+        
+        .project-description h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        .project-description p {
+            margin-bottom: 20px;
+        }
+        
+        .project-features {
+            margin: 30px 0;
+        }
+        
+        .feature-list {
+            list-style: none;
+        }
+        
+        .feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .project-sidebar {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: fit-content;
+        }
+        
+        .sidebar-section {
+            margin-bottom: 30px;
+        }
+        
+        .sidebar-section h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tech-tag {
+            background: var(--light);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+            text-decoration: none;
+            margin-top: 40px;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .project-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-header h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">WAK INNOV</a>
+            <ul class="nav-links">
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#projects">Projets</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="project-detail">
+        <div class="container">
+            <a href="index.html#projects" class="back-link">
+                <i class="fas fa-arrow-left"></i> Retour aux projets
+            </a>
+            
+            <div class="project-header">
+                <h1>Étude et Conception - Mandrin Hydraulique</h1>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-calendar"></i>
+                        <span>Janvier - Mars 2022</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-user"></i>
+                        <span>Projet académique</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-building"></i>
+                        <span>Université Grenoble Alpes</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                     alt="Mandrin hydraulique - Conception mécanique">
+            </div>
+            
+            <div class="project-content">
+                <div class="project-description">
+                    <h2>Description du projet</h2>
+                    <p>Conception complète d'un mandrin hydraulique de haute précision destiné aux machines-outils à commande numérique. Ce projet a nécessité une approche intégrée combinant calculs hydrauliques, conception mécanique et validation par simulation.</p>
+                    
+                    <p>Le mandrin a été optimisé pour offrir une force de serrage de 8 tonnes avec une répétabilité de positionnement de ±0.01 mm. La conception intègre un système de compensation automatique de l'usure et une détection de pièce intégrée.</p>
+                    
+                    <div class="project-features">
+                        <h2>Caractéristiques techniques</h2>
+                        <ul class="feature-list">
+                            <li>Force de serrage : 8 tonnes à 200 bars</li>
+                            <li>Précision de positionnement : ±0.01 mm</li>
+                            <li>Diamètre de serrage : 50 à 200 mm</li>
+                            <li>Pression hydraulique : 50 à 200 bars</li>
+                            <li>Matériau corps : Acier 42CrMo4 trempé</li>
+                            <li>Mâchoires : Acier Z160CDV12 nitruré</li>
+                            <li>Temps de serrage : < 2 secondes</li>
+                        </ul>
+                    </div>
+                    
+                    <h2>Démarche de conception</h2>
+                    <p>Le projet a débuté par une analyse fonctionnelle complète et des calculs hydrauliques détaillés pour dimensionner le vérin principal. La modélisation 3D a permis d'optimiser la distribution des contraintes et la cinématique du mécanisme de serrage.</p>
+                    
+                    <p>Des simulations par éléments finis ont validé la résistance aux charges maximales et identifié les zones critiques. Le choix des matériaux a été optimisé pour allier durée de vie et coût de fabrication.</p>
+                    
+                    <h2>Innovations</h2>
+                    <p>Le mandrin intègre un système breveté de compensation d'usure automatique qui maintient la précision sur toute la durée de vie de l'outil. Un capteur de position intégré permet le contrôle en temps réel du serrage.</p>
+                </div>
+                
+                <div class="project-sidebar">
+                    <div class="sidebar-section">
+                        <h3>Technologies utilisées</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">SolidWorks</span>
+                            <span class="tech-tag">Calcul hydraulique</span>
+                            <span class="tech-tag">Elements Finis</span>
+                            <span class="tech-tag">CAO 3D</span>
+                            <span class="tech-tag">Dessin industriel</span>
+                            <span class="tech-tag">Simulation</span>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Compétences mobilisées</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Hydraulique</span>
+                            <span class="tech-tag">RDM</span>
+                            <span class="tech-tag">Choix matériaux</span>
+                            <span class="tech-tag">Calcul de structure</span>
+                            <span class="tech-tag">Optimisation</span>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Durée</h3>
+                        <p>3 mois</p>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Livrables</h3>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li>• Modèle 3D paramétrique</li>
+                            <li>• Plans de définition complets</li>
+                            <li>• Cahier des calculs</li>
+                            <li>• Rapport de simulation</li>
+                            <li>• Dossier de fabrication</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="index.html#contact" class="btn">Discuter de ce projet</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>WAK INNOV</h3>
+                    <p>Bureau d'études mécaniques spécialisé en conception et simulation numérique pour l'industrie.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <p>Email: contact@wakinnov.com</p>
+                    <p>Tél: +33 7 66 31 87 61</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 WAK INNOV - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
