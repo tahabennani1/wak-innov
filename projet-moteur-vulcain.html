@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse Module du Divergent - Moteur Vulcain 2 | WAK INNOV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reprenez votre CSS existant et ajoutez ces styles */
+        :root {
+            --primary: #0056b3;
+            --secondary: #2e86de;
+            --accent: #ff6b6b;
+            --dark: #2c3e50;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation identique à votre site */
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Styles spécifiques à la page projet */
+        .project-detail {
+            padding: 80px 0 40px;
+        }
+        
+        .project-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .project-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .meta-item i {
+            color: var(--primary);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .project-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+        
+        .project-description h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        .project-description p {
+            margin-bottom: 20px;
+        }
+        
+        .project-features {
+            margin: 30px 0;
+        }
+        
+        .feature-list {
+            list-style: none;
+        }
+        
+        .feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .project-sidebar {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: fit-content;
+        }
+        
+        .sidebar-section {
+            margin-bottom: 30px;
+        }
+        
+        .sidebar-section h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tech-tag {
+            background: var(--light);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+            text-decoration: none;
+            margin-top: 40px;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .project-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-header h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">WAK INNOV</a>
+            <ul class="nav-links">
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#projects">Projets</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Détail du projet -->
+    <section class="project-detail">
+        <div class="container">
+            <a href="index.html#projects" class="back-link">
+                <i class="fas fa-arrow-left"></i> Retour aux projets
+            </a>
+            
+            <div class="project-header">
+                <h1>Analyse Module du Divergent - Moteur Vulcain 2</h1>
+                <div class="project-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-calendar"></i>
+                        <span>Février - Avril 2024</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-user"></i>
+                        <span>Projet académique</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-building"></i>
+                        <span>Université Paris Saclay</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-image">
+                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                     alt="Moteur Vulcain 2 - Analyse module divergent">
+            </div>
+            
+            <div class="project-content">
+                <div class="project-description">
+                    <h2>Description du projet</h2>
+                    <p>Ce projet consistait en l'analyse et l'optimisation du module divergent du moteur Vulcain 2, utilisé dans le programme Ariane 5. L'objectif principal était d'étudier le comportement vibratoire de la structure sous différentes conditions de fonctionnement.</p>
+                    
+                    <p>Le travail a inclus la modélisation des contraintes thermiques et mécaniques, l'analyse des modes propres de vibration, et l'étude de l'impact des paramètres physiques sur les fréquences de résonance. Une attention particulière a été portée à l'optimisation de la géométrie pour améliorer la résistance aux vibrations tout en maintenant les performances aérodynamiques.</p>
+                    
+                    <div class="project-features">
+                        <h2>Résultats obtenus</h2>
+                        <ul class="feature-list">
+                            <li>Optimisation du modèle avec une réduction de 15% des contraintes maximales</li>
+                            <li>Étude de convergence validant la précision des simulations</li>
+                            <li>Identification des modes critiques de vibration</li>
+                            <li>Recommandations d'optimisation pour la conception</li>
+                            <li>Rapport technique détaillé avec analyses comparatives</li>
+                        </ul>
+                    </div>
+                    
+                    <h2>Méthodologie</h2>
+                    <p>La méthodologie employée a suivi une approche systématique : modélisation CAO, maillage adaptatif, analyse par éléments finis, et validation des résultats par comparaison avec des données expérimentales lorsque disponibles.</p>
+                </div>
+                
+                <div class="project-sidebar">
+                    <div class="sidebar-section">
+                        <h3>Technologies utilisées</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Ansys</span>
+                            <span class="tech-tag">Elements Finis</span>
+                            <span class="tech-tag">Simulation</span>
+                            <span class="tech-tag">CAO</span>
+                            <span class="tech-tag">Aérospatial</span>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Compétences mobilisées</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Analyse vibratoire</span>
+                            <span class="tech-tag">Optimisation</span>
+                            <span class="tech-tag">Calcul structurel</span>
+                            <span class="tech-tag">Validation</span>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Durée</h3>
+                        <p>3 mois</p>
+                    </div>
+                    
+                    <a href="index.html#contact" class="btn">Discuter de ce projet</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>WAK INNOV</h3>
+                    <p>Bureau d'études mécaniques spécialisé en conception et simulation numérique pour l'industrie.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <p>Email: contact@wakinnov.com</p>
+                    <p>Tél: +33 7 66 31 87 61</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 WAK INNOV - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
