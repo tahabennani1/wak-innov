@@ -746,15 +746,18 @@
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-title">
-                <h2>Projets Réalisés</h2>
-                <p>Découvrez une sélection de nos réalisations techniques</p>
-            </div>
-            <div class="project-grid">
+  <!-- Remplacez la section Projects par ce code : -->
+<section id="projects" class="projects">
+    <div class="container">
+        <div class="section-title">
+            <h2>Projets Réalisés</h2>
+            <p>Découvrez une sélection de nos réalisations techniques</p>
+        </div>
+        <div class="project-grid">
+            <!-- Projet 1 -->
+            <a href="projet-moteur-vulcain.html" class="project-card-link">
                 <div class="project-card">
-                    <div class="project-img" style="background-image: url('https://2022.help.altair.com/2022/hwsolvers/ja_jp/os/images/solvers/free_gridsb.png');">
+                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
                         <div class="project-img-overlay">
                             <i class="fas fa-rocket"></i>
                         </div>
@@ -767,10 +770,17 @@
                             <span class="project-tag">Simulation</span>
                             <span class="project-tag">Aérospatial</span>
                         </div>
+                        <div class="project-link">
+                            <span>Voir les détails <i class="fas fa-arrow-right"></i></span>
+                        </div>
                     </div>
                 </div>
+            </a>
+            
+            <!-- Projet 2 -->
+            <a href="projet-robot-araignee.html" class="project-card-link">
                 <div class="project-card">
-                    <div class="project-img" style="background-image: url('https://fbi.cults3d.com/uploaders/15051237/illustration-file/15bb9265-7ac8-4644-af65-058afcd4badb/006.jpg');">
+                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
                         <div class="project-img-overlay">
                             <i class="fas fa-robot"></i>
                         </div>
@@ -783,10 +793,17 @@
                             <span class="project-tag">Robotique</span>
                             <span class="project-tag">CAO</span>
                         </div>
+                        <div class="project-link">
+                            <span>Voir les détails <i class="fas fa-arrow-right"></i></span>
+                        </div>
                     </div>
                 </div>
+            </a>
+            
+            <!-- Projet 3 -->
+            <a href="projet-mandrin-hydraulique.html" class="project-card-link">
                 <div class="project-card">
-                    <div class="project-img" style="background-image: url('https://www.iso.org/obp/graphics/std/iso_std_iso_19719_ed-1_v1_fr/fig_1.png');">
+                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');">
                         <div class="project-img-overlay">
                             <i class="fas fa-cog"></i>
                         </div>
@@ -799,11 +816,51 @@
                             <span class="project-tag">Conception</span>
                             <span class="project-tag">Calcul</span>
                         </div>
+                        <div class="project-link">
+                            <span>Voir les détails <i class="fas fa-arrow-right"></i></span>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+/* Ajoutez ces styles à votre CSS existant */
+.project-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.project-card-link:hover {
+    transform: translateY(-5px);
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-link {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    font-weight: 600;
+    color: #0056b3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.project-link i {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.project-card-link:hover .project-link i {
+    transform: translateX(5px);
+}
+</style>
 
     <!-- Expertise -->
     <section id="expertise" class="expertise">
