@@ -3,712 +3,306 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WAK INNOV - Bureau d'Études Mécaniques</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>WAK INNOV - Bureau d'Études Mécaniques & Ingénierie</title>
     <style>
-        :root {
-            --primary: #0056b3;
-            --secondary: #2e86de;
-            --accent: #ff6b6b;
-            --dark: #2c3e50;
-            --light: #f8f9fa;
-            --gray: #6c757d;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Arial', sans-serif;
         }
-        
+
         body {
-            background-color: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
+            background-color: #f5f5f5;
+            color: #333;
         }
-        
-        .container {
-            width: 100%;
+
+        /* En-tête avec zone bleue réduite */
+        header {
+            background-color: #1a3a6c;
+            color: white;
+            padding: 15px 0;
+            position: relative;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
-        /* Header */
-        header {
-            background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0, 86, 179, 0.8)), url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 80px 0 100px;
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #4da6ff;
+        }
+
+        /* Menu déroulant */
+        .menu-container {
             position: relative;
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .menu-toggle:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            z-index: 1000;
             overflow: hidden;
         }
-        
-        .logo {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
+
+        .dropdown-menu.active {
+            display: block;
         }
-        
-        .logo i {
-            margin-right: 10px;
-            color: var(--accent);
+
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 20px;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            border-bottom: 1px solid #f0f0f0;
         }
-        
-        .header-content {
+
+        .dropdown-menu a:hover {
+            background-color: #f5f5f5;
+            color: #1a3a6c;
+        }
+
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+
+        /* Section principale */
+        .hero {
+            background-color: #1a3a6c;
+            color: white;
+            padding: 40px 20px;
             text-align: center;
+        }
+
+        .hero-content {
             max-width: 800px;
             margin: 0 auto;
-            position: relative;
-            z-index: 1;
         }
-        
-        .header-content h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
+
+        .hero h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
         }
-        
-        .header-content p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            line-height: 1.5;
         }
-        
-        .btn {
+
+        .cta-button {
             display: inline-block;
+            background-color: #4da6ff;
+            color: white;
             padding: 12px 30px;
-            background-color: var(--accent);
-            color: white;
+            border-radius: 4px;
             text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
         }
-        
-        .btn:hover {
-            background-color: #ff5252;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+        .cta-button:hover {
+            background-color: #3a8cd6;
         }
-        
-        /* Navigation */
-        nav {
+
+        /* Contenu principal */
+        .main-content {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section {
             background-color: white;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-        
-        .nav-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-        
-        /* Services */
-        .services {
-            padding: 80px 0;
-            background-color: white;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            width: 60px;
-            height: 3px;
-            background-color: var(--accent);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        
-        .section-title p {
-            color: var(--gray);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-card {
-            background-color: var(--light);
-            border-radius: 10px;
             padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .service-card i {
-            font-size: 3rem;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-        
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
-        
-        .service-card p {
-            color: var(--gray);
-        }
-        
-        /* Projects */
-        .projects {
-            padding: 80px 0;
-            background-color: #f1f5f9;
-        }
-        
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-        
-        .project-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .project-img {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-            position: relative;
-        }
-        
-        .project-img-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .project-card:hover .project-img-overlay {
-            opacity: 1;
-        }
-        
-        .project-content {
-            padding: 20px;
-        }
-        
-        .project-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-        
-        .project-content p {
-            color: var(--gray);
-            margin-bottom: 15px;
-        }
-        
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 15px;
-        }
-        
-        .project-tag {
-            background-color: #e9ecef;
-            color: var(--dark);
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
-        
-        /* Expertise */
-        .expertise {
-            padding: 80px 0;
-            background: url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-attachment: fixed;
-            position: relative;
-            color: white;
-            text-align: center;
-        }
-        
-        .expertise::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 86, 179, 0.9);
-        }
-        
-        .expertise .container {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .expertise .section-title h2 {
-            color: white;
-        }
-        
-        .expertise .section-title p {
-            color: rgba(255, 255, 255, 0.8);
-        }
-        
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .expertise-item {
-            text-align: center;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .expertise-item i {
-            font-size: 2.5rem;
-            color: white;
-            margin-bottom: 15px;
-        }
-        
-        .expertise-item h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-        
-        /* Process */
-        .process {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-        }
-        
-        .process-steps {
-            display: flex;
-            justify-content: space-between;
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-        }
-        
-        .process-steps::before {
-            content: '';
-            position: absolute;
-            top: 40px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: var(--primary);
-            z-index: 1;
-        }
-        
-        .process-step {
-            text-align: center;
-            position: relative;
-            z-index: 2;
-            flex: 1;
-            padding: 0 15px;
-        }
-        
-        .step-number {
-            width: 80px;
-            height: 80px;
-            background-color: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0 auto 20px;
-        }
-        
-        .process-step h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-        
-        /* Gallery */
-        .gallery {
-            padding: 80px 0;
-            background-color: white;
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
-        }
-        
-        .gallery-item {
-            height: 250px;
-            border-radius: 10px;
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-        }
-        
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        .gallery-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 86, 179, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-        
-        /* Contact */
-        .contact {
-            padding: 80px 0;
-            background-color: white;
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .contact-item i {
-            font-size: 1.5rem;
-            color: var(--primary);
-            width: 40px;
-            height: 40px;
-            background: rgba(0, 86, 179, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .contact-form {
-            background-color: var(--light);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: inherit;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-        
-        .form-control:focus {
-            border-color: var(--primary);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 60px 0 30px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            width: 40px;
-            height: 2px;
-            background: var(--primary);
-            bottom: 0;
-            left: 0;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #999;
-            font-size: 0.9rem;
-        }
-        
-        /* Alert messages */
-        .alert {
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
             display: none;
         }
-        
-        .alert-success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
+
+        .section.active {
+            display: block;
         }
-        
-        .alert-error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
+
+        .section h2 {
+            color: #1a3a6c;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
         }
-        
-        /* Responsive */
-        @media (max-width: 992px) {
-            .process-steps {
-                flex-direction: column;
-                gap: 40px;
-            }
-            
-            .process-steps::before {
-                display: none;
-            }
-            
-            .header-content h1 {
-                font-size: 2.5rem;
-            }
+
+        .section p {
+            line-height: 1.6;
+            margin-bottom: 15px;
         }
-        
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .nav-links {
-                justify-content: center;
-            }
-            
-            .nav-links li {
-                margin: 0 10px;
-            }
-            
-            .header-content h1 {
-                font-size: 2rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
+
+        /* Pied de page */
+        footer {
+            background-color: #1a3a6c;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <i class="fas fa-cogs"></i>
-                    WAK INNOV
+        <div class="header-top">
+            <div class="logo">WAK<span>INNOV</span></div>
+            <div class="menu-container">
+                <button class="menu-toggle">Menu ▼</button>
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="#" data-section="services">Services</a>
+                    <a href="#" data-section="expertise">Expertise</a>
+                    <a href="#" data-section="projets">Projets</a>
+                    <a href="#" data-section="process">Process</a>
+                    <a href="#" data-section="realisations">Réalisations</a>
+                    <a href="#" data-section="contact">Contact</a>
+                    <a href="#" data-section="actualites">Actualités</a>
                 </div>
-                <h1>Bureau d'Études Mécaniques & Ingénierie</h1>
-                <p>Conception, calcul et modélisation pour l'industrie</p>
-                <a href="#contact" class="btn">Demander un devis</a>
             </div>
         </div>
     </header>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="container nav-container">
-            <a href="#" class="nav-logo">WAK INNOV</a>
-            <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#expertise">Expertise</a></li>
-                <li><a href="#projects">Projets</a></li>
-                <li><a href="#process">Process</a></li>
-                <li><a href="#gallery">Réalisations</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="actualites.html">Actualités</a></li>
-            </ul>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Bureau d'Études Mécaniques & Ingénierie</h1>
+            <p>Conception, calcul et modélisation pour l'industrie</p>
+            <a href="#" class="cta-button">Demander un devis</a>
         </div>
-    </nav>
+    </section>
 
+    <main class="main-content">
+        <!-- Section Services -->
+        <section id="services" class="section active">
+            <h2>Services</h2>
+            <p>Nous proposons une gamme complète de services d'ingénierie mécanique adaptés aux besoins de votre industrie.</p>
+            <p>Nos services incluent la conception de produits, l'analyse structurelle, la simulation numérique, et bien plus encore.</p>
+        </section>
+
+        <!-- Section Expertise -->
+        <section id="expertise" class="section">
+            <h2>Expertise</h2>
+            <p>Notre équipe d'experts possède une vaste expérience dans divers domaines de l'ingénierie mécanique.</p>
+            <p>Nous maîtrisons les dernières technologies et méthodes pour vous offrir des solutions innovantes et performantes.</p>
+        </section>
+
+        <!-- Section Projets -->
+        <section id="projets" class="section">
+            <h2>Projets</h2>
+            <p>Découvrez nos projets récents et notre approche pour résoudre des défis techniques complexes.</p>
+            <p>Nous travaillons sur des projets variés, de la conception de pièces uniques à l'optimisation de systèmes complets.</p>
+        </section>
+
+        <!-- Section Process -->
+        <section id="process" class="section">
+            <h2>Process</h2>
+            <p>Notre méthodologie de travail garantit des résultats de qualité dans les délais impartis.</p>
+            <p>Nous suivons un processus rigoureux allant de l'analyse des besoins à la livraison finale.</p>
+        </section>
+
+        <!-- Section Réalisations -->
+        <section id="realisations" class="section">
+            <h2>Réalisations</h2>
+            <p>Explorez nos réalisations les plus marquantes et les solutions que nous avons apportées à nos clients.</p>
+            <p>Chaque projet est une opportunité de démontrer notre savoir-faire et notre engagement envers l'excellence.</p>
+        </section>
+
+        <!-- Section Contact -->
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <p>N'hésitez pas à nous contacter pour discuter de vos projets et découvrir comment nous pouvons vous aider.</p>
+            <p>Notre équipe est à votre disposition pour répondre à toutes vos questions et vous accompagner dans vos initiatives.</p>
+        </section>
+
+        <!-- Section Actualités -->
+        <section id="actualites" class="section">
+            <h2>Actualités</h2>
+            <p>Restez informé des dernières nouvelles de WAK INNOV et des tendances du secteur de l'ingénierie mécanique.</p>
+            <p>Nous partageons régulièrement des informations sur nos projets, nos innovations et notre participation à des événements.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 WAK INNOV - Tous droits réservés</p>
+    </footer>
+
+    <script>
+        // Gestion du menu déroulant
+        const menuToggle = document.querySelector('.menu-toggle');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        const menuLinks = document.querySelectorAll('.dropdown-menu a');
+        const sections = document.querySelectorAll('.section');
+
+        // Ouvrir/fermer le menu déroulant
+        menuToggle.addEventListener('click', function() {
+            dropdownMenu.classList.toggle('active');
+        });
+
+        // Fermer le menu si on clique en dehors
+        document.addEventListener('click', function(event) {
+            if (!menuToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.classList.remove('active');
+            }
+        });
+
+        // Changer de section au clic sur un lien du menu
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Fermer le menu déroulant
+                dropdownMenu.classList.remove('active');
+                
+                // Masquer toutes les sections
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Afficher la section correspondante
+                const targetSection = document.getElementById(this.getAttribute('data-section'));
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+    
     <!-- Services -->
     <section id="services" class="services">
         <div class="container">
